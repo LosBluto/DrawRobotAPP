@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+
+
+    <ImageView
+        android:id="@+id/bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="0dp"
+        android:background="@drawable/bg" />
+
+    <ImageButton
+        android:id="@+id/change"
+        android:layout_width="950px"
+        android:layout_height="424px"
+        android:layout_marginTop="176px"
+        android:layout_marginLeft="719px"
+        android:background="@drawable/lang"
+        android:onClick="changeActivity"
+        android:text="@string/开始作画旅程" />
+
+    <ImageView
+        android:layout_width="710px"
+        android:layout_height="839px"
+        android:background="@drawable/robot"
+        android:onClick="changeActivity"
+        android:layout_alignParentBottom="true"/>
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gif"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:onClick="wakeUp"
+        android:src="@drawable/normal" />
+
+
+</RelativeLayout>

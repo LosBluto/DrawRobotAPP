@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">绘画机器人</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="拍照">拍照</string>
+    <string name="转移">转移</string>
+    <string name="上传照片">上传照片</string>
+    <string name="textview">TextView</string>
+    <string name="开始作画">开始作画</string>
+    <string name="CropImage" />
+    <string name="裁剪">裁剪</string>
+    <string name="开始旅程">开始旅程</string>
+    <string name="开始作画旅程">开始作画旅程</string>
+    <string name="返回">返回</string>
+    <string name="todo">TODO</string>
+</resources>
