@@ -2,28 +2,22 @@ package com.example.myapplication;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.ScaleAnimation;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -31,7 +25,6 @@ import android.widget.Toast;
 
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 
@@ -108,7 +101,7 @@ public class CameraActivity extends AppCompatActivity {
                     camera.setVisibility(View.GONE);
                     imageView.setVisibility(View.VISIBLE);  //简笔画可见
 
-                    String temp = HttpUtil.jinzhi();        //绘画完毕开始进纸
+                    String temp = HttpUtil.jinzhi("http://"+url+":5000/JinZhi");        //绘画完毕开始进纸
 
                     break;
                 case UPDATEOVER:
@@ -447,7 +440,7 @@ public class CameraActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                imgResult = HttpUtil.genStickByAPI(file);
+                imgResult = HttpUtil.genStickByAPI("http://120.55.193.46:8040/api/genStick",file);
 
                 if (imgResult == null) {
                     ToastUtils.show("生成失败，请检查服务器是否开启");
@@ -480,7 +473,6 @@ public class CameraActivity extends AppCompatActivity {
         Thread child = new Thread(new Runnable() {
             @Override
             public void run() {
-//                String trail = HttpUtil.getTrail("http://47.113.110.11:5901/genTrail",imgResult.getOutput());
                 Log.d("output",imgResult.getOutput());
                 String trail = HttpUtil.genTrail("http://120.55.193.46:8012/genTrail",imgResult.getOutput());
                 Log.d("Trail",trail);
@@ -492,7 +484,7 @@ public class CameraActivity extends AppCompatActivity {
                 Message message = new Message();
                 String drawingResult;
                 if (result.equals("success")) {              //判断是否摇臂成功
-                    drawingResult = HttpUtil.startDrawing(trailPath);
+                    drawingResult = HttpUtil.startDrawing("http://"+url+":5000/Upload_Trail",trailPath);
                     isUp = true;                        //摇臂成功修改标志位
                 }
                 else{
