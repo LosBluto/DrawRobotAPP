@@ -59,7 +59,7 @@ public class CameraActivity extends AppCompatActivity {
 
     private static boolean isUp = false;                    //标志摇臂是否在上面
 
-    private String url = "192.168.64.157";
+    private String url = "192.168.64.160";
 
     //CameraView对象
     private CameraView camera;
@@ -71,6 +71,8 @@ public class CameraActivity extends AppCompatActivity {
     private ImageButton uploadPic;
     //作画按钮
     private ImageButton startDraw;
+    //回到主界面的按钮
+    private ImageButton home;
     //显示时间的文本框
     private TextView textView;
     //存放图片的区域
@@ -100,6 +102,7 @@ public class CameraActivity extends AppCompatActivity {
                     camera.close();
                     camera.setVisibility(View.GONE);
                     imageView.setVisibility(View.VISIBLE);  //简笔画可见
+                    home.setVisibility(View.VISIBLE);       //返回主界面可见
 
                     String temp = HttpUtil.jinzhi("http://"+url+":5000/JinZhi");        //绘画完毕开始进纸
 
@@ -141,11 +144,15 @@ public class CameraActivity extends AppCompatActivity {
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE;
         getWindow().getDecorView().setSystemUiVisibility(uiOptions);
 
+
         //实例化对象
         camera = findViewById(R.id.preview_camera);
         camera.setLifecycleOwner(this);
         shutter = findViewById(R.id.takePhoto);
         back = findViewById(R.id.back);
+
+        home = findViewById(R.id.home);
+        home.setVisibility(View.GONE);
 
         uploadPic = findViewById(R.id.uploadPic);
         uploadPic.setVisibility(View.GONE);
@@ -539,6 +546,10 @@ public class CameraActivity extends AppCompatActivity {
         }
         else
             this.finish();
+    }
+
+    public void finish(View view){
+        this.finish();
     }
 
 

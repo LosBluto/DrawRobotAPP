@@ -34,12 +34,21 @@
         android:layout_height="300px"
         android:layout_alignParentRight="true"
         android:src="@drawable/waiting"/>
+
+    <ImageButton
+        android:id="@+id/home"
+        android:layout_width="220dp"
+        android:layout_height="168dp"
+        android:onClick="finish"
+        android:background="@drawable/home"/>
     <!--    存放生成图的空间-->
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:contentDescription="@string/todo"/>
+        android:contentDescription="@string/todo"
+
+        />
 <!--        tools:srcCompat="@tools:sample/avatars" />-->
     <!--    存放计时器的空间-->
     <TextView

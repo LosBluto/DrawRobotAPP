@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static long waitingTime = 30000;
 
-    private String url = "192.168.64.157";
+    private String url = "192.168.64.160";
 
     public Task task;
 
