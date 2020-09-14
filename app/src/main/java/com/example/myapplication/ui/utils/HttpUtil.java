@@ -2,8 +2,7 @@ package com.example.myapplication.ui.utils;
 import android.util.Log;
 
 import com.example.myapplication.ui.pojo.ImgResult;
-import com.example.myapplication.ui.pojo.RobotUser;
-import com.example.myapplication.ui.pojo.works;
+
 import org.json.JSONObject;
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -23,7 +22,7 @@ public class HttpUtil {
 
 
     //机器人专有的api
-    private static String apikey = "c20ad4d76fe97759aa27a0c99bff6710";
+    private static String apikey = "c81e728d9d4c2f636f067f89cc14862c";
     private static String apisecret = "b8dd44a56acc48818ca446c930d8ba5b";
 
 
@@ -45,6 +44,7 @@ public class HttpUtil {
 
         try {
             Response response = client_Long.newCall(request).execute();
+            System.out.println(response.code());
             JSONObject jsonObject = new JSONObject(response.body().string());
 
             String data = jsonObject.get("data").toString();
@@ -77,6 +77,8 @@ public class HttpUtil {
         Request request = new Request.Builder()
                 .url(url)
                 .post(requestBody)
+                .header("APIKey",apikey)
+                .header("APISecret",apisecret)
                 .build();
 
         try {

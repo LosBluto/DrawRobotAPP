@@ -5,42 +5,48 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
-
-
-
+    
     <ImageView
         android:id="@+id/bg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="0dp"
-        android:background="@drawable/bg" />
+        android:background="@drawable/bg" >
+        </ImageView>
+    <ImageView
+        android:layout_width="455px"
+        android:layout_height="146px"
+        android:layout_marginStart="733px"
+        android:layout_marginTop="52px"
+        android:background="@drawable/words"
+        />
 
+    <!--        android:layout_marginStart="763px"-->
+    <!--        android:layout_marginTop="797px"-->
     <ImageButton
         android:id="@+id/change"
-        android:layout_width="950px"
-        android:layout_height="424px"
-        android:layout_marginTop="176px"
-        android:layout_marginLeft="719px"
-        android:background="@drawable/lang"
+        android:layout_width="395px"
+        android:layout_height="395px"
+        android:layout_marginTop="797px"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/camera"
         android:onClick="changeActivity"
         android:text="@string/开始作画旅程" />
 
-    <ImageView
-        android:layout_width="710px"
-        android:layout_height="839px"
-        android:background="@drawable/robot"
-        android:onClick="changeActivity"
-        android:layout_alignParentBottom="true"/>
+    <!--    <ImageView-->
+<!--        android:layout_width="710px"-->
+<!--        android:layout_height="839px"-->
+<!--        android:background="@drawable/robot"-->
+<!--        android:onClick="changeActivity"-->
+<!--        android:layout_alignParentBottom="true"/>-->
 
-    <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/gif"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:onClick="wakeUp"
-        android:src="@drawable/normal" />
+<!--    <pl.droidsonroids.gif.GifImageView-->
+<!--        android:id="@+id/gif"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:onClick="wakeUp"-->
+<!--        android:src="@drawable/normal" />-->
 
 
 </RelativeLayout>

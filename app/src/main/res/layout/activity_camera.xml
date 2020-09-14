@@ -6,49 +6,87 @@
     android:background="@color/design_default_color_surface"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_1"/>
+
     <com.otaliastudios.cameraview.CameraView
         android:id="@+id/preview_camera"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="946px"
+        android:layout_centerVertical="true"
         android:keepScreenOn="true"
         android:outlineSpotShadowColor="#FFFFFF"
         app:cameraFacing="front">
 
         <ImageView
             android:id="@+id/camera_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/tuceng"
-            app:layout_drawOnPictureSnapshot="true"
-            app:layout_drawOnPreview="true"
-            app:layout_drawOnVideoSnapshot="true" />
-
-
+            android:layout_width="769px"
+            android:layout_height="769px"
+            android:layout_marginStart="577px"
+            android:layout_marginTop="63px"
+            android:background="@drawable/circle" />
     </com.otaliastudios.cameraview.CameraView>
 
 
-<!--    存放等待gif-->
-    <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/waiting"
-        android:layout_width="400px"
-        android:layout_height="300px"
-        android:layout_alignParentRight="true"
-        android:src="@drawable/waiting"/>
 
-    <ImageButton
-        android:id="@+id/home"
-        android:layout_width="220dp"
-        android:layout_height="168dp"
-        android:onClick="finish"
-        android:background="@drawable/home"/>
+
+
+<!--&lt;!&ndash;    存放等待gif&ndash;&gt;-->
+<!--    <pl.droidsonroids.gif.GifImageView-->
+<!--        android:id="@+id/waiting"-->
+<!--        android:layout_width="400px"-->
+<!--        android:layout_height="300px"-->
+<!--        android:layout_alignParentRight="true"-->
+<!--        android:src="@drawable/waiting"/>-->
+
     <!--    存放生成图的空间-->
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="977px"
+        android:layout_height="744px"
+        android:layout_marginStart="473px"
+        android:layout_marginTop="139px"
+        android:background="@drawable/image_back"
         android:contentDescription="@string/todo"
-
         />
+    <ImageView
+        android:id="@+id/waiting_image"
+        android:layout_width="481px"
+        android:layout_height="412px"
+        android:layout_marginStart="263px"
+        android:layout_marginTop="346px"/>
+    <ImageView
+        android:id="@+id/line"
+        android:layout_width="522px"
+        android:layout_height="230px"
+        android:layout_marginStart="580px"
+        android:layout_marginTop="378px"
+        android:background="@drawable/line"/>
+    <ImageView
+        android:id="@+id/pen"
+        android:background="@drawable/pen"
+        android:layout_width="104px"
+        android:layout_height="171px"
+        android:layout_marginStart="993px"
+        android:layout_marginTop="241px"
+        />
+    <ImageView
+        android:id="@+id/shadow"
+        android:background="@drawable/shadow"
+        android:layout_width="187px"
+        android:layout_height="14px"
+        android:layout_marginStart="860px"
+        android:layout_marginTop="1041px"/>
+    <ImageView
+        android:id="@+id/robot"
+        android:background="@drawable/robot"
+        android:layout_width="440px"
+        android:layout_height="322px"
+        android:layout_marginStart="738px"
+        android:layout_marginTop="681px"/>
 <!--        tools:srcCompat="@tools:sample/avatars" />-->
     <!--    存放计时器的空间-->
     <TextView
@@ -58,48 +96,58 @@
         android:layout_centerInParent="true"
         android:clickable="true"
         android:gravity="center"
-        android:textColor="#B5090909"
+        android:textColor="#ffffff"
         android:textColorLink="#9C27B0"
         android:textSize="70sp" />
 <!--    拍照按钮-->
     <ImageButton
         android:id="@+id/takePhoto"
-        android:layout_width="168dp"
-        android:layout_height="168dp"
+        android:layout_width="167px"
+        android:layout_height="166px"
         android:layout_centerVertical="true"
-        android:layout_marginStart="740dp"
-        android:background="@drawable/camera"
+        android:layout_marginStart="1693px"
+        android:layout_marginTop="517px"
+        android:background="@drawable/quickstart"
         android:onClick="takephoto"
         android:text="@string/拍照" />
 
     <ImageButton
         android:id="@+id/back"
-        android:layout_width="168dp"
-        android:layout_height="168dp"
-        android:onClick="back"
-        android:layout_marginStart="50dp"
-        android:layout_centerVertical="true"
-        android:background="@drawable/left"/>
-<!--上传照片按钮-->
-    <ImageButton
-        android:id="@+id/uploadPic"
-        android:background="@drawable/chose"
-        android:layout_width="168dp"
-        android:layout_height="168dp"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="740dp"
-        android:onClick="UpdateImage"
-        android:text="@string/上传照片" />
+        android:layout_width="94px"
+        android:layout_height="76px"
+        android:layout_marginStart="60px"
+        android:layout_marginTop="17px"
+        android:background="@drawable/back"
+        android:onClick="back" />
+<!--&lt;!&ndash;上传照片按钮&ndash;&gt;-->
+<!--    <ImageButton-->
+<!--        android:id="@+id/uploadPic"-->
+<!--        android:background="@drawable/chose"-->
+<!--        android:layout_width="168dp"-->
+<!--        android:layout_height="168dp"-->
+<!--        android:layout_centerVertical="true"-->
+<!--        android:layout_marginStart="740dp"-->
+<!--        android:onClick="UpdateImage"-->
+<!--        android:text="@string/上传照片" />-->
 
     <!--开始作画-->
     <ImageButton
         android:id="@+id/getTrail"
-        android:layout_width="168dp"
-        android:layout_height="168dp"
-        android:background="@drawable/chose"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="740dp"
+        android:layout_width="556px"
+        android:layout_height="252px"
+        android:background="@drawable/change_sure"
+        android:layout_marginStart="976px"
+        android:layout_marginTop="914px"
         android:onClick="getTrail"
         android:text="@string/开始作画" />
+
+    <ImageButton
+        android:id="@+id/retake"
+        android:layout_width="556px"
+        android:layout_height="252px"
+        android:layout_marginStart="388px"
+        android:layout_marginTop="914px"
+        android:background="@drawable/change_take"
+        android:onClick="finish"/>
 
 </RelativeLayout>

@@ -20,6 +20,10 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
+
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -30,6 +34,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <service
+            android:name="com.inuker.bluetooth.library.BluetoothService" />
 
         <uses-library
             android:name="org.apache.http.legacy"
@@ -45,7 +51,7 @@
             android:screenOrientation="landscape"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".CameraActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
